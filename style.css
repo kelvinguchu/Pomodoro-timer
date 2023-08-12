@@ -1,5 +1,11 @@
-body{
-    background-color: rgb(179, 43, 221);
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #121212; /* Deep dark background */
+    color: #EAEAEA; /* Light gray for readability against dark background */
 }
 
 #container {
@@ -9,45 +15,49 @@ body{
     transform: translate(-50%, -50%);
     width: 50%;
     height: 50%;
-    border: none;
     border-radius: 10px;
+    padding: 20px 0;
     text-align: center;
-    background: rgba(255, 255, 255, 0.25);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-    border-radius: 30px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-  }
-  
-  .content {
-    flex: 1; /* Fill remaining space */
+    background: rgba(18, 18, 18, 0.85); /* Slightly translucent darker shade */
+    border: 1px solid #333; /* Dark border */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); /* Soft shadow for subtle elevation */
+}
+
+.content {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Align content to the top */
-  }
-  
-  button {
-    margin-top: auto; /* Move buttons to the bottom */
-    margin-bottom: 20px; /* Add margin between buttons */
-    margin-left: 20px;
-    margin-right: 20px;
+    justify-content: center; /* Aligned content to center for aesthetic appeal */
+}
+
+button {
+    margin: 20px;
     padding: 10px 20px;
     border-radius: 5px;
-    border: none;
-    background: rgba(209, 24, 194, 0.596);
+    border: 1px solid #444; /* Border to give depth */
+    background: #333; /* Darker background for buttons */
     font-size: 20px;
     cursor: pointer;
-  }
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth color transition and subtle button press effect */
+    color: #EAEAEA; /* Text color to match general text color */
+}
 
-  #timer {
-    flex: 1; /* Fill remaining space */
+button:hover {
+    background: #555; /* Slightly lighter on hover */
+}
+
+button:active {
+    transform: scale(0.97); /* Slight scaling when button is pressed */
+}
+
+#timer {
+    flex: 1;
     display: flex;
-    align-items: center; /* Align content vertically at the center */
-    justify-content: center; /* Align content horizontally at the center */
+    align-items: center;
+    justify-content: center;
     font-size: 50px;
-  }
-  
+    position: relative; /* Positioned relative to allow inner elements to be positioned absolutely if needed */
+}
