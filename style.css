@@ -4,8 +4,8 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background: #121212; /* Deep dark background */
-    color: #EAEAEA; /* Light gray for readability against dark background */
+    background: #121212; 
+    color: #EAEAEA; 
 }
 
 #container {
@@ -21,36 +21,36 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background: rgba(18, 18, 18, 0.85); /* Slightly translucent darker shade */
-    border: 1px solid #333; /* Dark border */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); /* Soft shadow for subtle elevation */
+    background: rgba(18, 18, 18, 0.85); 
+    border: 1px solid #333;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 }
 
 .content {
     flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Aligned content to center for aesthetic appeal */
+    justify-content: center; 
 }
 
 button {
     margin: 20px;
     padding: 10px 20px;
     border-radius: 5px;
-    border: 1px solid #444; /* Border to give depth */
-    background: #333; /* Darker background for buttons */
+    border: 1px solid #444;
+    background: #333;
     font-size: 20px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth color transition and subtle button press effect */
-    color: #EAEAEA; /* Text color to match general text color */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    color: #EAEAEA;
 }
 
 button:hover {
-    background: #555; /* Slightly lighter on hover */
+    background: #555;
 }
 
 button:active {
-    transform: scale(0.97); /* Slight scaling when button is pressed */
+    transform: scale(0.97); 
 }
 
 #timer {
@@ -59,5 +59,5 @@ button:active {
     align-items: center;
     justify-content: center;
     font-size: 50px;
-    position: relative; /* Positioned relative to allow inner elements to be positioned absolutely if needed */
+    position: relative; 
 }
