@@ -1,12 +1,17 @@
-// Get the elements from the DOM
-const countElement = document.getElementById("count");
-const startButton = document.getElementById("start");
-const stopButton = document.getElementById("stop");
-const resetButton = document.getElementById("reset");
+// DOM elements
+const domElements = {
+  count: document.getElementById("count"),
+  startButton: document.getElementById("start"),
+  stopButton: document.getElementById("stop"),
+  resetButton: document.getElementById("reset")
+};
 
-// Variables for the timer
-let timerInterval;
-let timeInSeconds = 25 * 60; // Set initial time to 25 minutes
+// Timer settings
+const timerSettings = {
+  interval: null,
+  defaultTime: 25 * 60,  // 25 minutes
+  currentTime: 25 * 60
+};
 
 // Format the time as mm:ss
 function formatTime(time) {
@@ -16,35 +21,46 @@ function formatTime(time) {
 }
 
 // Update the timer display
-function updateTimer() {
-  countElement.textContent = formatTime(timeInSeconds);
+function updateDisplay() {
+  domElements.count.textContent = formatTime(timerSettings.currentTime);
 }
 
 // Start the timer
 function startTimer() {
-  updateTimer(); // Update the initial display
-  timerInterval = setInterval(() => {
-    timeInSeconds--;
-    updateTimer();
-    if (timeInSeconds === 0) {
-      stopTimer();
-    }
+  updateDisplay();
+  timerSettings.interval = setInterval(() => {
+      timerSettings.currentTime--;
+      updateDisplay();
+      if (timerSettings.currentTime === 0) {
+          stopTimer();
+      }
   }, 1000);
 }
 
 // Stop the timer
 function stopTimer() {
-  clearInterval(timerInterval);
+  clearInterval(timerSettings.interval);
 }
 
 // Reset the timer
 function resetTimer() {
   stopTimer();
-  timeInSeconds = 25 * 60; // Reset time to 25 minutes
-  updateTimer();
+  timerSettings.currentTime = timerSettings.defaultTime;
+  updateDisplay();
 }
 
-// Add event listeners to the buttons
-startButton.addEventListener("click", startTimer);
-stopButton.addEventListener("click", stopTimer);
-resetButton.addEventListener("click", resetTimer);
+// Initialize event listeners
+function initListeners() {
+  domElements.startButton.addEventListener("click", startTimer);
+  domElements.stopButton.addEventListener("click", stopTimer);
+  domElements.resetButton.addEventListener("click", resetTimer);
+}
+
+// Initialize the timer application
+function initTimerApp() {
+  updateDisplay();
+  initListeners();
+}
+
+initTimerApp();
+
